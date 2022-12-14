@@ -4,7 +4,7 @@ import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
-import { ErrorPage } from "./pages/ErrorPage";
+import ErrorPage from "./pages/ErrorPage";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
