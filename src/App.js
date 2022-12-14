@@ -1,31 +1,42 @@
 import { Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
+import Home from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Profile } from "./pages/Profile";
-import { ErrorPage } from "./pages/ErrorPage";
+import ErrorPage from "./pages/ErrorPage";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "./components/NavBar";
+import { Toaster } from "react-hot-toast";
+import Biblioteca from "./pages/Biblioteca";
+import PageSinal from './pages/PageSinal';
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
-  return (
-    <>
-      <AuthContextComponent>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/profile"
-            element={<ProtectedRoute Component={Profile} />}
-          />
-
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
-      </AuthContextComponent>
-    </>
-  );
+	return (
+		<>
+			<AuthContextComponent>
+				<div className="App">
+					<Toaster />
+					<NavBar />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/signup" element={<Signup />} />
+						<Route path="/login" element={<Login />} />
+						<Route
+							path="/profile"
+							element={<ProtectedRoute Component={Profile} />}
+						/>
+						<Route path="/biblioteca" element={<Biblioteca />} />
+            <Route path="/PageSinal" element={<PageSinal />} />
+						<Route path="*" element={<ErrorPage />} />
+					</Routes>
+				</div>
+			</AuthContextComponent>
+		</>
+	);
 }
 
 export default App;
