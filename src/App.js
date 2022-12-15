@@ -30,8 +30,9 @@ function App() {
               path="/profile"
               element={<ProtectedRoute Component={Profile} />}
             />
+            <Route path="/novotermo" element={<PageIncludeSinal />} />
             <Route path="/biblioteca" element={<Biblioteca />} />
-            <Route path="/PageSinal" element={<PageSinal />} />
+            <Route path="/PageSinal/:id" element={<PageSinal />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </div>
