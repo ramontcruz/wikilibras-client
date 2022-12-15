@@ -82,7 +82,7 @@ export function Profile() {
           </Col>
           <Col>
             <Link to="/tasks">
-              <Button variant="dark">Minhas Tarefas</Button>
+              <Button variant="dark">Acessar Bilioteca</Button>
             </Link>
           </Col>
         </Row>
