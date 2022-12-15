@@ -16,29 +16,28 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import PageIncludeSinal from "./pages/PageIncludeSinal";
 
 function App() {
-	return (
-		<>
-			<AuthContextComponent>
-				<div className="App">
-					<Toaster />
-					<NavBar />
-					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/signup" element={<Signup />} />
-						<Route path="/login" element={<Login />} />
-						<Route
-							path="/profile"
-							element={<ProtectedRoute Component={Profile} />}
-						/>
-						<Route path="/biblioteca" element={<Biblioteca />} />
-						<Route path="/PageSinal" element={<PageSinal />} />
-						<Route path="/novotermo" element={<PageIncludeSinal />} />
-						<Route path="*" element={<ErrorPage />} />
-					</Routes>
-				</div>
-			</AuthContextComponent>
-		</>
-	);
+  return (
+    <>
+      <AuthContextComponent>
+        <div className="App">
+          <Toaster />
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/profile"
+              element={<ProtectedRoute Component={Profile} />}
+            />
+            <Route path="/biblioteca" element={<Biblioteca />} />
+            <Route path="/PageSinal" element={<PageSinal />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </div>
+      </AuthContextComponent>
+    </>
+  );
 }
 
 export default App;
