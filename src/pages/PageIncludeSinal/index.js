@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 //import axios from "axios";
 import toast from "react-hot-toast";
-import {api} from "../../api/api.js";
+import { api } from "../../api/api.js";
 import "../../App.css";
 
 const imagens = [
@@ -85,7 +85,7 @@ const imagens = [
 
 function PageIncludeSinal() {
 	const navigate = useNavigate();
-	
+
 	const [form, setForm] = useState({
 		termo: "",
 		fraseContexto: "",
@@ -100,12 +100,12 @@ function PageIncludeSinal() {
 
 	useEffect(() => {
 		async function fetchUser() {
-		  const response = await api.get("/user/profile");
-		  setUser(response.data);
+			const response = await api.get("/user/profile");
+			setUser(response.data);
 		}
-	
+
 		fetchUser();
-	  }, []);
+	}, []);
 
 	function handleChange(e) {
 		setForm({ ...form, [e.target.name]: e.target.value });
@@ -129,8 +129,8 @@ function PageIncludeSinal() {
 			toast.error("Preencha todos os campos");
 			return;
 		}
-		form.cm="01"
-		form.criadoPor=user.id
+		form.cm = "01";
+		form.criadoPor = user.id;
 
 		await api.post("/termo/new-termo", form);
 		setForm({
@@ -201,36 +201,36 @@ function PageIncludeSinal() {
 							>
 								Configuração de Mão
 							</button>
-							
+
 							<div
 								className="dropdown-menu overflow-auto"
-								
 								aria-labelledby="dropdownMenuButton"
 								id="dropdown-basic-button"
 								title="Configuração de mão"
 								onSelect={handleSelect}
 								name="cm"
 							>
-								<div className="row no-gutters">	
-									{imagens.map((imagem,id) => {
+								<div className="row no-gutters">
+									{imagens.map((imagem, id) => {
 										return (
-										
-										<div>
-											<p>{imagem}</p>	
-											<img
-											className="dropdown-item"
-											name="cm"
-											value={id}
-											onClick={handleSelect}
-											key={imagem}
-											src={`/${imagem}`} alt="3" height="80px" width="100px"
-											/>
-										</div>
-												);
+											<div>
+												<p>{imagem}</p>
+												<img
+													className="dropdown-item"
+													name="cm"
+													value={id}
+													onClick={handleSelect}
+													key={imagem}
+													src={`/${imagem}`}
+													alt="3"
+													height="80px"
+													width="100px"
+												/>
+											</div>
+										);
 									})}
 								</div>
 							</div>
-							
 						</div>
 						<FloatingLabel label="Link do vídeo com o termo" className="mb-3">
 							<Form.Control
@@ -257,33 +257,26 @@ function PageIncludeSinal() {
 								placeholder="Link do vídeo com o contexto"
 							/>
 						</FloatingLabel>
-						<FloatingLabel
-							label="CM"
-							className="mb-3"
-						>
-							{imagens.map((imagem,id) => {
-										return (
-										
-										<ul className="flex-container wrap" >
-											<li>
+						<FloatingLabel label="CM" className="mb-3">
+							{imagens.map((imagem, id) => {
+								return (
+									<ul className="flex-container wrap">
+										<li>
 											<img
-											name="cm"
-											value="01"
-											onClick={handleSelect}
-											key={imagem}
-											src={`/${imagem}`} alt="3" height="80px" width="100px"
+												name="cm"
+												value="01"
+												onClick={handleSelect}
+												key={imagem}
+												src={`/${imagem}`}
+												alt="3"
+												height="80px"
+												width="100px"
 											/>
-											</li>
-										
-											
-										</ul>
-												);
-									})}
-							
+										</li>
+									</ul>
+								);
+							})}
 						</FloatingLabel>
-
-						
-
 
 						<Row>
 							<Col>
@@ -307,8 +300,6 @@ function PageIncludeSinal() {
 					</Form>
 				</Card>
 			</Container>
-			
-			
 		</div>
 	);
 }

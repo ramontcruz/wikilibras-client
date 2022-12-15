@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
 import { Toaster } from "react-hot-toast";
 import Biblioteca from "./pages/Biblioteca";
-import PageSinal from './pages/PageSinal';
+import PageSinal from "./pages/PageSinal";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import PageIncludeSinal from "./pages/PageIncludeSinal";
@@ -31,8 +31,8 @@ function App() {
 							element={<ProtectedRoute Component={Profile} />}
 						/>
 						<Route path="/biblioteca" element={<Biblioteca />} />
-            <Route path="/PageSinal" element={<PageSinal />} />
-            <Route path="/novotermo" element={<PageIncludeSinal />} />
+						<Route path="/PageSinal" element={<PageSinal />} />
+						<Route path="/novotermo" element={<PageIncludeSinal />} />
 						<Route path="*" element={<ErrorPage />} />
 					</Routes>
 				</div>
