@@ -13,6 +13,7 @@ import Biblioteca from "./pages/Biblioteca";
 import PageSinal from "./pages/PageSinal";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import PageIncludeSinal from "./pages/PageIncludeSinal";
 
 function App() {
   return (
