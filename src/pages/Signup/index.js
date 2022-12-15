@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import { Container, Button, Card, Row, Col } from "react-bootstrap";
 
 export function Signup() {
   const navigate = useNavigate();
@@ -48,43 +49,51 @@ export function Signup() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="formName">Nome:</label>
-      <input
-        id="formName"
-        name="name"
-        type="text"
-        value={form.name}
-        onChange={handleChange}
-      />
-      <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} />
+    <Container>
+      <Card>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="formName">Nome:</label>
+            <input
+              id="formName"
+              name="name"
+              type="text"
+              value={form.name}
+              onChange={handleChange}
+            />
+            <label htmlFor="formImg">Sua foto de perfil:</label>
+            <input type="file" id="formImg" onChange={handleImage} />
 
-      <label htmlFor="formEmail">E-mail:</label>
-      <input
-        id="formEmail"
-        name="email"
-        type="email"
-        value={form.email}
-        onChange={handleChange}
-      />
-      <label htmlFor="formPassword">Senha:</label>
-      <input
-        id="formPassword"
-        name="password"
-        type="password"
-        value={form.password}
-        onChange={handleChange}
-      />
-      <label htmlFor="formConfirmPassword">Confirmação de senha</label>
-      <input
-        id="formConfirmPassword"
-        type="password"
-        name="confirmPassword"
-        value={form.confirmPassword}
-        onChange={handleChange}
-      />
-      <button type="submit">Cadastrar</button>
-    </form>
+            <label htmlFor="formEmail">E-mail:</label>
+            <input
+              id="formEmail"
+              name="email"
+              type="email"
+              value={form.email}
+              onChange={handleChange}
+            />
+            <label htmlFor="formPassword">Senha:</label>
+            <input
+              id="formPassword"
+              name="password"
+              type="password"
+              value={form.password}
+              onChange={handleChange}
+            />
+            <label htmlFor="formConfirmPassword">Confirmação de senha</label>
+            <input
+              id="formConfirmPassword"
+              type="password"
+              name="confirmPassword"
+              value={form.confirmPassword}
+              onChange={handleChange}
+            />
+            <div>
+              <button type="submit">Cadastrar</button>
+            </div>
+          </form>
+        </div>
+      </Card>
+    </Container>
   );
 }
