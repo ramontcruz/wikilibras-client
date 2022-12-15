@@ -112,7 +112,13 @@ function PageIncludeSinal() {
 	}
 
 	function handleSelect(e) {
-		form.cm = e.target.src;
+		const entrada = e.target.src;
+		const inicio = entrada.length-6;
+		const fim = entrada.length-4;
+		const cmdaEntrada = entrada.substring(inicio,fim);
+		console.log("entrada ",entrada.substring(inicio,fim))
+		
+		form.cm = cmdaEntrada;
 	}
 
 	async function handleSubmit(e) {
@@ -199,7 +205,7 @@ function PageIncludeSinal() {
 								aria-haspopup="true"
 								aria-expanded="false"
 							>
-								Buscar por Configuração de Mão
+								Configuração de Mão
 							</button>
 							<div
 								className="dropdown-menu overflow-auto"
