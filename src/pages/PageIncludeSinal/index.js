@@ -129,7 +129,7 @@ function PageIncludeSinal() {
 			toast.error("Preencha todos os campos");
 			return;
 		}
-		form.cm = "01";
+		//form.cm = "01";
 		form.criadoPor = user.id;
 
 		await api.post("/termo/new-termo", form);
@@ -199,9 +199,8 @@ function PageIncludeSinal() {
 								aria-haspopup="true"
 								aria-expanded="false"
 							>
-								Configuração de Mão
+								Buscar por Configuração de Mão
 							</button>
-
 							<div
 								className="dropdown-menu overflow-auto"
 								aria-labelledby="dropdownMenuButton"
@@ -211,22 +210,19 @@ function PageIncludeSinal() {
 								name="cm"
 							>
 								<div className="row no-gutters">
-									{imagens.map((imagem, id) => {
+									{imagens.map((imagem) => {
 										return (
-											<div>
-												<p>{imagem}</p>
-												<img
-													className="dropdown-item"
-													name="cm"
-													value={id}
-													onClick={handleSelect}
-													key={imagem}
-													src={`/${imagem}`}
-													alt="3"
-													height="80px"
-													width="100px"
-												/>
-											</div>
+											<img
+												className="dropdown-item"
+												name="cm"
+												value="1"
+												onClick={handleSelect}
+												key={imagem}
+												src={`/${imagem}`}
+												alt="3"
+												height="80px"
+												width="100px"
+											/>
 										);
 									})}
 								</div>
@@ -256,26 +252,6 @@ function PageIncludeSinal() {
 								value={form.urlConceito}
 								placeholder="Link do vídeo com o contexto"
 							/>
-						</FloatingLabel>
-						<FloatingLabel label="CM" className="mb-3">
-							{imagens.map((imagem, id) => {
-								return (
-									<ul className="flex-container wrap">
-										<li>
-											<img
-												name="cm"
-												value="01"
-												onClick={handleSelect}
-												key={imagem}
-												src={`/${imagem}`}
-												alt="3"
-												height="80px"
-												width="100px"
-											/>
-										</li>
-									</ul>
-								);
-							})}
 						</FloatingLabel>
 
 						<Row>

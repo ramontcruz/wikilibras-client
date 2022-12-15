@@ -15,14 +15,14 @@ export function Profile() {
   
 
   //importados de week7client
-  const { setLoggedInUser } = useContext(AuthContext);
+  //const { setLoggedInUser } = useContext(AuthContext);
   //const [user, setUser] = useState({});
   const [form, setForm] = useState({
     name: "",
   });
   const [reload, setReload] = useState(false);
-  const [termo, setTermo] = useState([]);
-  const [idTermo, setIdTermo] = useState([]);
+  //const [termo, setTermo] = useState([]);
+  //const [idTermo, setIdTermo] = useState([]);
 
   useEffect(() => {
     async function fetchUser() {
