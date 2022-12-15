@@ -38,17 +38,22 @@ function Home() {
 						<Col>
 							<br />
 							<h6>
-								Para incluir um novo sinal na biblioteca, é necessário estar logado ou criar um usuário. Depois, basta gravar um vídeo
-								com o termo desejado, outro vídeo com o conceito, salve os dois
-								vídeos no YouTube e usa a url dos vídeos para cadastrar o termo
+								Para incluir um novo sinal na biblioteca, é necessário estar
+								logado ou criar um usuário. Depois, basta gravar um vídeo com o
+								termo desejado, outro vídeo com o conceito, salve os dois vídeos
+								no YouTube e usa a url dos vídeos para cadastrar o termo
 								clicando no link abaixo.
 							</h6>
-								<Link to={"/login"}>
-									<Button variant="success" className="mt-2">Fazer login</Button>
-								</Link>
-                <Link to={"/signup"}>
-									<Button variant="primary" className="mt-2">Criar usuário</Button>
-								</Link>
+							<Link to={"/login"}>
+								<Button variant="success" className="mt-2">
+									Fazer login
+								</Button>
+							</Link>
+							<Link to={"/signup"}>
+								<Button variant="primary" className="mt-2">
+									Criar usuário
+								</Button>
+							</Link>
 						</Col>
 						<Col>
 							<br />
