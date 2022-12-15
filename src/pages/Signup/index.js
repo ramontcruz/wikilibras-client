@@ -50,14 +50,17 @@ export function Signup() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="formName">Nome:</label>
-      <input
-        id="formName"
-        name="name"
-        type="text"
-        value={form.name}
-        onChange={handleChange}
-      />
+      <Row>
+        <label htmlFor="formName">Nome:</label>
+        <input
+          id="formName"
+          name="name"
+          type="text"
+          value={form.name}
+          onChange={handleChange}
+        />
+      </Row>
+
       <label htmlFor="formImg">Sua foto de perfil:</label>
       <input type="file" id="formImg" onChange={handleImage} />
 
