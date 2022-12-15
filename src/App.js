@@ -13,6 +13,7 @@ import Biblioteca from "./pages/Biblioteca";
 import PageSinal from './pages/PageSinal';
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import PageIncludeSinal from "./pages/PageIncludeSinal";
 
 function App() {
 	return (
@@ -31,6 +32,7 @@ function App() {
 						/>
 						<Route path="/biblioteca" element={<Biblioteca />} />
             <Route path="/PageSinal" element={<PageSinal />} />
+            <Route path="/novotermo" element={<PageIncludeSinal />} />
 						<Route path="*" element={<ErrorPage />} />
 					</Routes>
 				</div>
