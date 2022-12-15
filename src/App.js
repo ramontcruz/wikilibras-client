@@ -7,7 +7,7 @@ import { Profile } from "./pages/Profile";
 import ErrorPage from "./pages/ErrorPage";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar.js";
 import { Toaster } from "react-hot-toast";
 import Biblioteca from "./pages/Biblioteca";
 import PageSinal from './pages/PageSinal';
