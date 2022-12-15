@@ -6,13 +6,12 @@ import { Button, Col, Container, Card, Row } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useContext, useState } from "react";
 import { AuthContext } from "../../contexts/authContext";
-import {api} from "../../api/api.js";
+import { api } from "../../api/api.js";
 import EditUser from "../../components/EditUser";
 
 export function Profile() {
   const [user, setUser] = useState({ name: "", email: "", phone: "", role:"",estado:"", cidade:"",created:[],edited:[] });
   const navigate = useNavigate();
-  
 
   //importados de week7client
   //const { setLoggedInUser } = useContext(AuthContext);

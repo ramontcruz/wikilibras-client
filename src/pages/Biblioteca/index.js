@@ -1,6 +1,6 @@
 import { Container, Button, Card, FloatingLabel, Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { api } from "../../api/api";
 import { Link } from "react-router-dom";
 
 function Biblioteca() {
@@ -79,9 +79,7 @@ function Biblioteca() {
 
 	useEffect(() => {
 		async function pegarTermos() {
-			const response = await axios.get(
-				"https://ironrest.cyclic.app/wikilibras/"
-			);
+			const response = await api.get("/all-termos");
 
 			setTermos(response.data);
 		}
