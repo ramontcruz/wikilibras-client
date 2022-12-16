@@ -105,9 +105,9 @@ export function Profile() {
               </p>
             </Card>
           </Col>
-          <Col>
+          {/* <Col>
             <img src={user.profilePic} alt="profile Pic" className="rounded" />
-          </Col>
+          </Col> */}
         </Row>
 
         <Row>

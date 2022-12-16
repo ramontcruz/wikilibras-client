@@ -66,7 +66,7 @@ return (
 						className="form-control"
 					/>
 				</div>
-				<div className="form-control-file my-1">
+				{/* <div className="form-control-file my-1">
 					<label htmlFor="formImg">Sua foto de perfil:</label>
 					<input
 						type="file"
@@ -75,7 +75,7 @@ return (
 						onChange={handleImage}
 						className="form-control"
 					/>
-				</div>
+				</div> */}
 				<div className="my-1">
 					<label htmlFor="formEmail">E-mail:</label>
 					<input
