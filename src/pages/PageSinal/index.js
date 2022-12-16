@@ -13,11 +13,13 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 import Modal from "react-bootstrap/Modal";
+import { api } from "../../api/api.js";
 
 function PageSinal() {
 	const navigate = useNavigate();
 	const { id } = useParams();
 	const [termo, setTermo] = useState({});
+	const [user, setUser] = useState({ name: "", email: "" });
 	const [reload, setReload] = useState(false);
 
 	const [show, setShow] = useState(false);
@@ -27,14 +29,15 @@ function PageSinal() {
 
 	const [form, setForm] = useState({
 		termo: "",
-		fraseExemplo: "",
+		fraseContexto: "",
 		conceito: "",
 		cm: "",
-		linkTermo: "",
-		linkContexto: "",
+		urlTermo: "",
+		urlConceito: "",
+		criadoPor: "",
 	});
-	let urlTermo = form.linkTermo;
-	let urlContexto = form.linkContexto;
+	let urlTermo = form.urlTermo;
+	let urlConceito = form.urlConceito;
 
 	const imagens = [
 		"01.jpg",
@@ -107,9 +110,7 @@ function PageSinal() {
 
 	useEffect(() => {
 		async function fetchTermo() {
-			const response = await axios.get(
-				`https://ironrest.cyclic.app/wikilibras/${id}`
-			);
+			const response = await api.get(`/termo/termo/${id}`);
 			setTermo(response.data);
 
 			setForm(response.data);
@@ -123,10 +124,17 @@ function PageSinal() {
 	}
 
 	function handleSelect(e) {
-		form.cm = e.target.src;
+		const entrada = e.target.src;
+		const inicio = entrada.length-6;
+		const fim = entrada.length-4;
+		const cmdaEntrada = entrada.substring(inicio,fim);
+		console.log("entrada ",entrada.substring(inicio,fim))
+		
+		form.cm = cmdaEntrada;
 	}
 
 	async function handleDelete() {
+		await api.get(`/termo/delete/${id}`);
 		await axios.delete(`https://ironrest.cyclic.app/wikilibras/${id}`);
 		navigate("/");
 		toast.error("Termo excluído!", {
@@ -141,8 +149,9 @@ function PageSinal() {
 
 		try {
 			const clone = { ...form };
+			clone.criadoPor = user.id;
 			delete clone._id;
-			await axios.put(`https://ironrest.cyclic.app/wikilibras/${id}`, clone);
+			await api.put(`/termo/edit/${id}`, clone);
 			setReload(!reload);
 			setShow(false);
 		} catch (error) {
@@ -160,16 +169,16 @@ function PageSinal() {
 
 	//código tratando shorts e watch
 	if (urlTermo.includes("watch?v=") === true) {
-		urlTermo = termo.linkTermo.replace("watch?v=", "embed/");
+		urlTermo = termo.urlTermo.replace("watch?v=", "embed/");
 	}
 	if (urlTermo.includes("shorts") === true) {
-		urlTermo = termo.linkTermo.replace("shorts", "embed");
+		urlTermo = termo.urlTermo.replace("shorts", "embed");
 	}
-	if (urlContexto.includes("watch?v=") === true) {
-		urlContexto = termo.linkContexto.replace("watch?v=", "embed/");
+	if (urlConceito.includes("watch?v=") === true) {
+		urlConceito = termo.urlConceito.replace("watch?v=", "embed/");
 	}
-	if (urlContexto.includes("shorts") === true) {
-		urlContexto = termo.linkContexto.replace("shorts", "embed");
+	if (urlConceito.includes("shorts") === true) {
+		urlConceito = termo.urlConceito.replace("shorts", "embed");
 	}
 
 	return (
@@ -192,7 +201,7 @@ function PageSinal() {
 							<iframe
 								width="300"
 								height="200"
-								src={urlContexto}
+								src={urlConceito}
 								title="YouTube video player"
 								frameBorder="0"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -214,12 +223,12 @@ function PageSinal() {
 					<Row>
 						<Col>
 							<h5>Frase de Exemplo</h5>
-							<h6>{termo.fraseExemplo}</h6>
+							<h6>{termo.fraseContexto}</h6>
 						</Col>
 						<Row>
 							<Col>
 								<h6>Configuração de Mão</h6>
-								<img src={termo.cm} alt="3" height="100px" />
+								<img src={`/${termo.cm}.jpg`} alt="3" height="100px" />
 							</Col>
 						</Row>
 					</Row>
@@ -272,8 +281,8 @@ function PageSinal() {
 								aria-label="With textarea"
 								type="text"
 								onChange={handleChange}
-								name="fraseExemplo"
-								value={form.fraseExemplo}
+								name="fraseContexto"
+								value={form.fraseContexto}
 							/>
 						</FloatingLabel>
 						<FloatingLabel label="Conceito" className="mb-3">
@@ -330,8 +339,8 @@ function PageSinal() {
 								aria-label="With textarea"
 								type="text"
 								onChange={handleChange}
-								name="linkTermo"
-								value={form.linkTermo}
+								name="urlTermo"
+								value={form.urlTermo}
 								placeholder="Link do vídeo com o termo"
 							/>
 						</FloatingLabel>
@@ -344,8 +353,8 @@ function PageSinal() {
 								aria-label="With textarea"
 								type="text"
 								onChange={handleChange}
-								name="linkContexto"
-								value={form.linkContexto}
+								name="urlConceito"
+								value={form.urlConceito}
 							/>
 						</FloatingLabel>
 						<Container className="buttonGroup">
