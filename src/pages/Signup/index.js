@@ -43,7 +43,9 @@ export function Signup() {
       await api.post("/user/sign-up", { ...form, img: imgURL });
 
       navigate("/login");
+      toast.success("Usuário criado");
     } catch (error) {
+      toast.error("Preencha todos os campos");
       console.log(error);
     }
   }

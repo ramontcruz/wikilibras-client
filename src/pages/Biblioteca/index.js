@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { api } from "../../api/api";
 import { Link } from "react-router-dom";
 
+
 function Biblioteca() {
 	const [termos, setTermos] = useState([]);
 	const [search, setSearch] = useState("");
@@ -79,7 +80,7 @@ function Biblioteca() {
 
 	useEffect(() => {
 		async function pegarTermos() {
-			const response = await api.get("/all-termos");
+			const response = await api.get("/termo/all-termos");
 
 			setTermos(response.data);
 		}
@@ -163,11 +164,11 @@ function Biblioteca() {
 					)
 					.filter((termo) => termo.cm.includes(imagemSearch))
 					.map((termo) => {
-						if (termo.linkTermo.includes("watch?v=") === true) {
-							url = termo.linkTermo.replace("watch?v=", "embed/");
+						if (termo.urlTermo.includes("watch?v=") === true) {
+							url = termo.urlTermo.replace("watch?v=", "embed/");
 						}
-						if (termo.linkTermo.includes("shorts") === true) {
-							url = termo.linkTermo.replace("shorts", "embed");
+						if (termo.urlTermo.includes("shorts") === true) {
+							url = termo.urlTermo.replace("shorts", "embed");
 						}
 						return (
 							<div className="cards" key={termo._id}>
