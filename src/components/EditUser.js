@@ -7,10 +7,9 @@ function EditUser({ form, setForm, reload, setReload }) {
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
-	
-	const {id} = req.params;
+
 	const [user, setUser] = useState({});
-	
+
 	useEffect(() => {
 		async function fetchUser() {
 			const response = await api.get("/user/profile");
@@ -27,7 +26,7 @@ function EditUser({ form, setForm, reload, setReload }) {
 	async function handleSubmit(e) {
 		e.preventDefault();
 		try {
-			await api.put(`/user/edit/${id}`, form);
+			await api.put(`/user/edit/${user._id}`, form);
 			setShow(false);
 			setReload(!reload);
 		} catch (error) {
