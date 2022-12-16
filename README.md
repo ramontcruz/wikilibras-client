@@ -33,8 +33,11 @@ Professores e TAs da IronHack.
 ## Pessoas Desenvolvedoras do Projeto
 
 André Licks – https://github.com/aclicks
+
 Angélica Rodrigues Gonçalves – https://github.com/angelicarg
+
 Guilherme Oliveira – https://github.com/guiolive
+
 Ramon Torres Cruz – https://github.com/ramontcruz
 
 ## Status do Projeto 
