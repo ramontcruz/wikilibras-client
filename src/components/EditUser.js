@@ -12,7 +12,7 @@ function EditUser({ form, setForm, reload, setReload }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  form.estado = async function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     try {
       await api.put("/user/edit", form);
@@ -22,7 +22,7 @@ function EditUser({ form, setForm, reload, setReload }) {
       console.log(error);
       alert("Algo deu errado");
     }
-  };
+  }
 
   return (
     <div>
