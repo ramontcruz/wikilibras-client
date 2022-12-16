@@ -3,6 +3,7 @@ import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
 import { Link, useNavigate } from "react-router-dom";
 import { Button, Container, Form } from "react-bootstrap";
+import { toast } from "react-hot-toast";
 
 export function Login() {
   const [form, setForm] = useState({
@@ -26,10 +27,11 @@ export function Login() {
       setLoggedInUser({ ...response.data });
 
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
-
+      toast.success("Usuário logado");
       navigate("/profile");
     } catch (error) {
       console.log(error);
+      toast.error("E-mail ou senha inválidos");
     }
   }
 
