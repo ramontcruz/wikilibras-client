@@ -12,6 +12,8 @@ function EditUser({ form, setForm, reload, setReload }) {
 		setForm({ ...form, [e.target.name]: e.target.value });
 	}
 
+  form.estado = 
+
 	async function handleSubmit(e) {
 		e.preventDefault();
 		try {
@@ -50,7 +52,7 @@ function EditUser({ form, setForm, reload, setReload }) {
 							value={form.phone}
 							onChange={handleChange}
 						/>
-						<DropdownButton id="dropdown-basic-button" title={form.estado}>
+						<DropdownButton id="dropdown-basic-button overflow-auto" title={form.estado}>
 							<Dropdown.Item value="Acre-AC" onClick={handleChange}>
 								Acre-AC
 							</Dropdown.Item>
@@ -145,7 +147,7 @@ function EditUser({ form, setForm, reload, setReload }) {
 						<Form.Label>Cidade</Form.Label>
 						<Form.Control
 							type="text"
-							name="phone"
+							name="cidade"
 							value={form.cidade}
 							onChange={handleChange}
 						/>
@@ -153,10 +155,10 @@ function EditUser({ form, setForm, reload, setReload }) {
 				</Modal.Body>
 				<Modal.Footer>
 					<Button variant="secondary" onClick={handleClose}>
-						Close
+						Fechar
 					</Button>
 					<Button variant="primary" onClick={handleSubmit}>
-						Save Changes
+						Salvar
 					</Button>
 				</Modal.Footer>
 			</Modal>
