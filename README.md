@@ -1,13 +1,17 @@
 # Projeto WikiLibras
 
 Este projeto é uma aplicação web desenvolvida por alunos do Bootcamp de Desenvolvimento Web da IronHack, com foco no desenvolvimento de ferramentas tecnológicas que possam contribuir com a administração pública.
+
 A WikiLibras e um site interativo e colaborativo Libras / Português que tá cmo um repositório de termos nas duas línguas. Tem o objetivo de ser alimentado elos próprios usuários, valorizando o regionalismo e interação entre as duas línguas.
+
 O público alvo desse projeto é a comunidade surda como um todo, uma vez que passe a ser uma referência na busca por um sinal (em Libras) ou uma palavra (em Português), ou ainda o significado de um termo. Todavia, qualquer pessoa que queira mais contato com uma ou outra língua tem uma boa experiência com o site WikiLibras.
 
 ## Status do Projeto 
 
 O projeto está online e foi deployado: https://wikilibras-client.netlify.app/
+
 O projeto Back-end que alimenta essa aplicação consta no repostório: https://github.com/ramontcruz/wikilibras-client
+
 O projeto Back-end deployado dessa aplicação consta no link: https://wikilibras-server.cyclic.app/
 
 ## Funcionalidades e Demonstração da Aplicação
