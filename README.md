@@ -10,7 +10,7 @@ O público alvo desse projeto é a comunidade surda como um todo, uma vez que pa
 
 O projeto está online e foi deployado: https://wikilibras-client.netlify.app/
 
-O projeto Back-end que alimenta essa aplicação consta no repostório: https://github.com/ramontcruz/wikilibras-client
+O projeto Back-end que alimenta essa aplicação consta no repostório: https://github.com/aclicks/wikilibras-backend/
 
 O projeto Back-end deployado dessa aplicação consta no link: https://wikilibras-server.cyclic.app/
 
