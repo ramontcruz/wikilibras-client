@@ -4,53 +4,54 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 export function Signup() {
-	const navigate = useNavigate();
-	const [form, setForm] = useState({
-		name: "",
-		email: "",
-		password: "",
-		confirmPassword: "",
-	});
+  const navigate = useNavigate();
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-	const [img, setImg] = useState("");
+  const [img, setImg] = useState("");
 
-	function handleChange(e) {
-		setForm({ ...form, [e.target.name]: e.target.value });
-	}
+  function handleChange(e) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
 
-	function handleImage(e) {
-		setImg(e.target.files[0]);
-	}
+  function handleImage(e) {
+    setImg(e.target.files[0]);
+  }
 
-	async function handleUpload() {
-		try {
-			const uploadData = new FormData();
-			uploadData.append("picture", img);
+  async function handleUpload() {
+    try {
+      const uploadData = new FormData();
+      uploadData.append("picture", img);
 
-			const response = await api.post("/upload-image", uploadData);
+      const response = await api.post("/uploadImage", uploadData);
 
-			return response.data.url;
-		} catch (error) {
-			console.log(error);
-		}
-	}
+      return response.data.url;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
-	async function handleSubmit(e) {
-		e.preventDefault();
+  async function handleSubmit(e) {
+    e.preventDefault();
 
-		try {
-			const imgURL = await handleUpload();
-			await api.post("/user/sign-up", { ...form, img: imgURL });
+    try {
+      const imgURL = await handleUpload();
+      await api.post("/user/sign-up", { ...form, img: imgURL });
 
-			navigate("/login");
-			toast.success("Usuário criado");
-		} catch (error) {
-			toast.error("Preencha todos os campos");
-			console.log(error);
-		}
-	}
-
-	return (
+      navigate("/login");
+      toast.success("Usuário criado");
+      toast.success("Usuário criado");
+    } catch (error) {
+      toast.error("Preencha todos os campos");
+      toast.error("Preencha todos os campos");
+      console.log(error);
+    }
+  }
+return (
 		
 			<form className="d-flex justify-content-center" onSubmit={handleSubmit}>
 				<div className="form-group">
@@ -110,8 +111,7 @@ export function Signup() {
 				<button type="submit" className="btn btn-outline-primary my-1">
 					Cadastrar
 				</button>
-        </div>
-			</form>
-		
-	);
+      </div>
+    </form>
+  );
 }

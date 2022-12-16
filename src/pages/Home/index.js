@@ -29,6 +29,7 @@ function Home() {
                 </Col>
               </Row>
             </div>
+
             <div className="video1 col">
               <iframe
                 width="560"
@@ -37,13 +38,12 @@ function Home() {
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen></iframe>
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
           {/* </Card> */}
-          <p>
-            
-          </p>
+          <p></p>
         </Container>
         <div className="divBotao">
           <Link to={"/Biblioteca/"}>
@@ -53,7 +53,6 @@ function Home() {
       </div>
     </div>
   );
-
 }
 
 export default Home;
