@@ -1,5 +1,5 @@
 import { Modal, Button, Form, Dropdown, DropdownButton } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { api } from "../api/api";
 
 function EditUser({ form, setForm, reload, setReload }) {

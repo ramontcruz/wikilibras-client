@@ -139,7 +139,7 @@ export function Profile() {
         <Col>
           <div className="divBotao">
             <Link to={"/novotermo"}>
-              <Button className="botaoTermo">Inclir um termo</Button>
+              <Button className="botaoTermo">Incluir um termo</Button>
             </Link>
           </div>
         </Col>
