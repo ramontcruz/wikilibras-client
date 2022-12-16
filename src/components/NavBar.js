@@ -1,6 +1,8 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Libras from '../assets/sinalLibras.png';
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Container";
+import Link from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import Libras from "../assets/sinalLibras.png";
 
 function NavBar() {
   return (
@@ -15,7 +17,7 @@ function NavBar() {
                 width="70"
                 height="70"
                 className="d-inline-block align-top"
-              />{' '}
+              />{" "}
             </div>
           </Navbar.Brand>
           <div>
