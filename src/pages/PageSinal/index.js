@@ -134,8 +134,7 @@ function PageSinal() {
 	}
 
 	async function handleDelete() {
-		await api.get(`/termo/delete/${id}`);
-		await axios.delete(`https://ironrest.cyclic.app/wikilibras/${id}`);
+		await api.delete(`/termo/delete/${id}`);
 		navigate("/");
 		toast.error("Termo excluído!", {
 			style: {
