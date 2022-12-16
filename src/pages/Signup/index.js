@@ -44,7 +44,9 @@ export function Signup() {
 
       navigate("/login");
       toast.success("Usuário criado");
+      toast.success("Usuário criado");
     } catch (error) {
+      toast.error("Preencha todos os campos");
       toast.error("Preencha todos os campos");
       console.log(error);
     }

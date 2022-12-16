@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Projeto WikiLibras
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é uma aplicação web desenvolvida por alunos do Bootcamp de Desenvolvimento Web da IronHack, com foco no desenvolvimento de ferramentas tecnológicas que possam contribuir com a administração pública.
 
-## Available Scripts
+A WikiLibras e um site interativo e colaborativo Libras / Português que tá cmo um repositório de termos nas duas línguas. Tem o objetivo de ser alimentado elos próprios usuários, valorizando o regionalismo e interação entre as duas línguas.
 
-In the project directory, you can run:
+O público alvo desse projeto é a comunidade surda como um todo, uma vez que passe a ser uma referência na busca por um sinal (em Libras) ou uma palavra (em Português), ou ainda o significado de um termo. Todavia, qualquer pessoa que queira mais contato com uma ou outra língua tem uma boa experiência com o site WikiLibras.
 
-### `npm start`
+## Status do Projeto 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+O projeto está online e foi deployado: https://wikilibras-client.netlify.app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+O projeto Back-end que alimenta essa aplicação consta no repostório: https://github.com/ramontcruz/wikilibras-client
 
-### `npm test`
+O projeto Back-end deployado dessa aplicação consta no link: https://wikilibras-server.cyclic.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Funcionalidades e Demonstração da Aplicação
 
-### `npm run build`
+Uma vez realizado cadastro e login no site, o usuário poderá contribuir com a inclusão de termos e com a edição de um termo já existente na página. A proposta é que a biblioteca de termos possa crescer a cada dia, formando m grande banco de termos, de diferentes partes do país.
+Aos usuários ainda não cadastrados ficam disponíveis as funcionalidades de consulta termos já existentes e a página de cada sinal, com seus detalhes. E apenas os administradores podem excluir sinais já inseridos no site.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tecnologias utilizadas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+HTML
+CSS
+JavaScryt
+React js
+Node js
+MongoDB
+Disponibilizado pelo Netlify
+Back-end onlne via Cyclic
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Pessoas Contribuidoras
 
-### `npm run eject`
+Professores e TAs da IronHack.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Pessoas Desenvolvedoras do Projeto
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+André Licks – https://github.com/aclicks
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Angélica Rodrigues Gonçalves – https://github.com/angelicarg
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Guilherme Oliveira – https://github.com/guiolive
 
-## Learn More
+Ramon Torres Cruz – https://github.com/ramontcruz
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Status do Projeto 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Online, concluído e disponível a acesso.
+https://wikilibras-client.netlify.app/
