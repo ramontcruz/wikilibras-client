@@ -65,7 +65,7 @@ function EditUser({ form, setForm, reload, setReload }) {
 							value={form.phone}
 							onChange={handleChange}
 						/>
-						<DropdownButton
+						{/* <DropdownButton
 							id="dropdown-basic-button overflow-auto"
 							title={form.estado}
 						>
@@ -166,7 +166,7 @@ function EditUser({ form, setForm, reload, setReload }) {
 							name="cidade"
 							value={form.cidade}
 							onChange={handleSelect}
-						/>
+						/> */}
 					</Form.Group>
 				</Modal.Body>
 				<Modal.Footer>
