@@ -7,10 +7,9 @@ function EditUser({ form, setForm, reload, setReload }) {
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
-	
-	const {id} = req.params;
+
 	const [user, setUser] = useState({});
-	
+
 	useEffect(() => {
 		async function fetchUser() {
 			const response = await api.get("/user/profile");
