@@ -4,8 +4,11 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import Libras from "../assets/sinalLibras.png";
 import "./NavBar.css";
+import { useContext } from "react";
+import { AuthContext } from "../contexts/authContext.js"
 
 function NavBar() {
+  const { loggedInUser} = useContext(AuthContext);
   return (
     <nav  className="navBar">
       <div className="divImagem">
@@ -37,6 +40,7 @@ function NavBar() {
           </ul>
         </div>
       </div>
+      {!loggedInUser && (
       <div> 
         <Link to="/login">
           <button className="botaoNav">
@@ -48,8 +52,22 @@ function NavBar() {
             Cadastro
           </button>
         </Link>
-        
       </div>
+      )}
+       {loggedInUser && (
+      <div> 
+        <Link to="/biblioteca">
+          <button className="botaoNav">
+            Biblioteca
+          </button>
+        </Link>
+        <Link to="/">
+          <button className="botaoNav">
+            Meu Perfil
+          </button>
+        </Link>
+      </div>
+      )}
     </nav>
   );
 }
