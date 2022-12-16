@@ -24,7 +24,7 @@ function Home() {
                     Libras e em Português. Para iniciar sua pesquisa ou busca
                     por um termo, basta clicar no botão abaixo e seguir para
                     nossa biblioteca. A atualização é instantânea e sempre pode
-                    ter a inclusão de novos termos.
+                    ter a inclusão de novos termos..
                   </p>
                 </Col>
               </Row>
