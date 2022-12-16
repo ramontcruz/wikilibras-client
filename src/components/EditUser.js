@@ -159,14 +159,14 @@ function EditUser({ form, setForm, reload, setReload }) {
 							<Dropdown.Item value="Tocantins-TO" onClick={handleSelect}>
 								Tocantins-TO
 							</Dropdown.Item>
-						</DropdownButton>
+						</DropdownButton>*/}
 						<Form.Label>Cidade</Form.Label>
 						<Form.Control
 							type="text"
 							name="cidade"
 							value={form.cidade}
 							onChange={handleSelect}
-						/> */}
+						/> 
 					</Form.Group>
 				</Modal.Body>
 				<Modal.Footer>
