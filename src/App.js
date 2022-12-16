@@ -20,8 +20,8 @@ function App() {
     <>
       <AuthContextComponent>
         <div className="App">
-          <Toaster />
           <NavBar />
+          <Toaster />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/signup" element={<Signup />} />

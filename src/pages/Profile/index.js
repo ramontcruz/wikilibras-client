@@ -91,14 +91,14 @@ export function Profile() {
 							<p>Estado: {user.estado}</p>
 							<p>Cidade: {user.cidade}</p>
 							<p>Perfil: {user.role}</p>
-							Termos Criados:{" "}
+							<p>Termos Criados:{" "}
 							{user.created.map((item) => {
 								return <p>{item}</p>;
-							})}
-							Termos Editados:{" "}
+							})}</p>
+							<p>Termos Editados:{" "}
 							{user.edited.map((item) => {
 								return <p>{item}</p>;
-							})}
+							})}</p>
 						</Card>
 					</Col>
 					<Col>
