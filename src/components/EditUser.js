@@ -25,8 +25,9 @@ function EditUser({ form, setForm, reload, setReload }) {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
+		const {id} = req.params;
 		try {
-			await api.put(`/user/edit/${user._id}`, form);
+			await api.put(`/user/edit/${id}`, form);
 			setShow(false);
 			setReload(!reload);
 		} catch (error) {
