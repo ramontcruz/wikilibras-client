@@ -88,7 +88,7 @@ export function Profile() {
               <h1>Bem vindo(a), {user.name}</h1>
               <p>Email: {user.email}</p>
               <p>Telefone: {user.phone}</p>
-              <p>Estado: {user.estado}</p>
+              {/* <p>Estado: {user.estado}</p> */}
               <p>Cidade: {user.cidade}</p>
               <p>Perfil: {user.role}</p>
               <p>
