@@ -97,9 +97,10 @@ export function Profile() {
               </p>
             </Card>
           </Col>
-          <Col>
-            <img src={user.photo} alt="profile Pic" className="rounded" />
-          </Col>
+
+          {/* <Col>
+            <img src={user.profilePic} alt="profile Pic" className="rounded" />
+          </Col> */}
         </Row>
 
         <Row>
