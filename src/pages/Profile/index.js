@@ -11,10 +11,11 @@ import EditUser from "../../components/EditUser";
 
 export function Profile() {
   const [user, setUser] = useState({ name: "", email: "", photo:"", phone: "", role:"",estado:"", cidade:"",created:[],edited:[] });
+  
   const navigate = useNavigate();
 
   //importados de week7client
-  //const { setLoggedInUser } = useContext(AuthContext);
+  const { setLoggedInUser } = useContext(AuthContext);
   //const [user, setUser] = useState({});
   const [form, setForm] = useState({
     name: "",
@@ -56,6 +57,7 @@ export function Profile() {
 
   function handleLogOut() {
     localStorage.removeItem("loggedInUser");
+    setLoggedInUser(null);
     navigate("/");
   }
 
@@ -81,10 +83,18 @@ export function Profile() {
               <p>Estado: {user.estado}</p>
               <p>Cidade: {user.cidade}</p>
               <p>Perfil: {user.role}</p>
-              Termos Criados: {user.created.map((item) => { return(<p>{item}</p>)})}
-              Termos Editados: {user.edited.map((item) => { return(<p>{item}</p>)})}
-
-              
+              <p>
+                Termos Criados:{" "}
+                {user.created.map(item => {
+                  return <p>{item}</p>;
+                })}
+              </p>
+              <p>
+                Termos Editados:{" "}
+                {user.edited.map(item => {
+                  return <p>{item}</p>;
+                })}
+              </p>
             </Card>
           </Col>
           <Col>
@@ -106,6 +116,7 @@ export function Profile() {
               Excluir perfil
             </Button>
           </Col>
+
           <Col>
             <Button variant="dark" onClick={handleLogOut}>
               Sign Out
@@ -117,6 +128,13 @@ export function Profile() {
             </Link>
           </Col>
         </Row>
+        <Col>
+          <div className="divBotao">
+            <Link to={"/novotermo"}>
+              <Button className="botaoTermo">Incluir um termo</Button>
+            </Link>
+          </div>
+        </Col>
       </Container>
     </div>
   );

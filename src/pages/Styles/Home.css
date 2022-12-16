@@ -1,0 +1,41 @@
+.titulo{
+ font-family: 'Akshar', sans-serif;
+ font-size: 45px;
+ letter-spacing: 0.08em;
+}
+
+p {
+    font-family: 'Akshar', sans-serif;
+    font-size: 20px;
+    font-style: oblique;
+    padding-top: 25px;
+    text-align: auto;
+    
+}
+
+.divHome{
+    padding: 15px  50px 0px;
+    background-color: #ffffff;
+    padding-bottom: 500px;
+}
+
+.botaoTermo{
+
+    background-color: #F5F5F5;
+    border: none;
+    font-size: 60px;
+    font-family: 'Akshar', sans-serif;
+    color: #000000;
+}
+
+.divBotao{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0px 1000px 10px;
+    background-color: #F5F5F5;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    font-family: 'Akshar', sans-serif;
+    letter-spacing: 0.08em;
+    
+}
