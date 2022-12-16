@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
-import { Container, Button, Card, Row, Col } from "react-bootstrap";
+import { toast } from "react-hot-toast";
 
 export function Signup() {
   const navigate = useNavigate();
@@ -43,52 +43,73 @@ export function Signup() {
       await api.post("/user/sign-up", { ...form, img: imgURL });
 
       navigate("/login");
+      toast.success("Usuário criado");
     } catch (error) {
+      toast.error("Preencha todos os campos");
       console.log(error);
     }
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Row>
-        <label htmlFor="formName">Nome:</label>
-        <input
-          id="formName"
-          name="name"
-          type="text"
-          value={form.name}
-          onChange={handleChange}
-        />
-      </Row>
-
-      <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} />
-
-      <label htmlFor="formEmail">E-mail:</label>
-      <input
-        id="formEmail"
-        name="email"
-        type="email"
-        value={form.email}
-        onChange={handleChange}
-      />
-      <label htmlFor="formPassword">Senha:</label>
-      <input
-        id="formPassword"
-        name="password"
-        type="password"
-        value={form.password}
-        onChange={handleChange}
-      />
-      <label htmlFor="formConfirmPassword">Confirmação de senha</label>
-      <input
-        id="formConfirmPassword"
-        type="password"
-        name="confirmPassword"
-        value={form.confirmPassword}
-        onChange={handleChange}
-      />
-      <button type="submit">Cadastrar</button>
+    <form onSubmit={handleSubmit} class="d-flex justify-content-center">
+      <div class="form-group">
+        <div class="col my-1">
+          <label htmlFor="formName">Nome:</label>
+          <input
+            id="formName"
+            name="name"
+            type="text"
+            value={form.name}
+            onChange={handleChange}
+            class="form-control"
+          />
+        </div>
+        <div class="form-control-file my-1">
+          <label htmlFor="formImg">Sua foto de perfil:</label>
+          <input
+            type="file"
+            id="formImg"
+            onChange={handleImage}
+            class="form-control"
+          />
+        </div>
+        <div class="my-1">
+          <label htmlFor="formEmail">E-mail:</label>
+          <input
+            id="formEmail"
+            name="email"
+            type="email"
+            value={form.email}
+            onChange={handleChange}
+            class="form-control"
+          />
+        </div>
+        <div class=" my-1">
+          <label htmlFor="formPassword">Senha:</label>
+          <input
+            id="formPassword"
+            name="password"
+            type="password"
+            value={form.password}
+            onChange={handleChange}
+            class="form-control"
+          />
+        </div>
+        <div class="my-1">
+          <label htmlFor="formConfirmPassword">Confirmação de senha</label>
+          <input
+            id="formConfirmPassword"
+            type="password"
+            name="confirmPassword"
+            value={form.confirmPassword}
+            onChange={handleChange}
+            class="form-control"
+          />
+        </div>
+        <button type="submit" class="btn btn-outline-primary my-1">
+          Cadastrar
+        </button>
+      </div>
     </form>
   );
 }
