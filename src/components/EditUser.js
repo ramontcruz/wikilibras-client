@@ -23,6 +23,10 @@ function EditUser({ form, setForm, reload, setReload }) {
 		setForm({ ...form, [e.target.name]: e.target.value });
 	}
 
+	function handleSelect(e) {
+		form.estado = e.target.value;
+	}
+
 	async function handleSubmit(e) {
 		e.preventDefault();
 		try {
@@ -65,94 +69,94 @@ function EditUser({ form, setForm, reload, setReload }) {
 							id="dropdown-basic-button overflow-auto"
 							title={form.estado}
 						>
-							<Dropdown.Item value="Acre-AC" onClick={handleChange}>
+							<Dropdown.Item value="Acre-AC" onClick={handleSelect}>
 								Acre-AC
 							</Dropdown.Item>
-							<Dropdown.Item value="Alagoas-AL" onClick={handleChange}>
+							<Dropdown.Item value="Alagoas-AL" onClick={handleSelect}>
 								Alagoas-AL
 							</Dropdown.Item>
-							<Dropdown.Item value="Amapá-AP" onClick={handleChange}>
+							<Dropdown.Item value="Amapá-AP" onClick={handleSelect}>
 								Amapá-AP
 							</Dropdown.Item>
-							<Dropdown.Item value="Amazonas-AM" onClick={handleChange}>
+							<Dropdown.Item value="Amazonas-AM" onClick={handleSelect}>
 								Amazonas-AM
 							</Dropdown.Item>
-							<Dropdown.Item value="Bahia-BA" onClick={handleChange}>
+							<Dropdown.Item value="Bahia-BA" onClick={handleSelect}>
 								Bahia-BA
 							</Dropdown.Item>
-							<Dropdown.Item value="Ceará-CE" onClick={handleChange}>
+							<Dropdown.Item value="Ceará-CE" onClick={handleSelect}>
 								Ceará-CE
 							</Dropdown.Item>
-							<Dropdown.Item value="Distrito Federal-DF" onClick={handleChange}>
+							<Dropdown.Item value="Distrito Federal-DF" onClick={handleSelect}>
 								Distrito Federal-DF
 							</Dropdown.Item>
-							<Dropdown.Item value="Espírito Santo-ES" onClick={handleChange}>
+							<Dropdown.Item value="Espírito Santo-ES" onClick={handleSelect}>
 								Espírito Santo-ES
 							</Dropdown.Item>
-							<Dropdown.Item value="Goiás-GO" onClick={handleChange}>
+							<Dropdown.Item value="Goiás-GO" onClick={handleSelect}>
 								Goiás-GO
 							</Dropdown.Item>
-							<Dropdown.Item value="Maranhão-MA" onClick={handleChange}>
+							<Dropdown.Item value="Maranhão-MA" onClick={handleSelect}>
 								Maranhão-MA
 							</Dropdown.Item>
-							<Dropdown.Item value="Mato Grosso-MT" onClick={handleChange}>
+							<Dropdown.Item value="Mato Grosso-MT" onClick={handleSelect}>
 								Mato Grosso-MT
 							</Dropdown.Item>
 							<Dropdown.Item
 								value="Mato Grosso do Sul-MS"
-								onClick={handleChange}
+								onClick={handleSelect}
 							>
 								Mato Grosso do Sul-MS
 							</Dropdown.Item>
-							<Dropdown.Item value="Minas Gerais-MG" onClick={handleChange}>
+							<Dropdown.Item value="Minas Gerais-MG" onClick={handleSelect}>
 								Minas Gerais-MG
 							</Dropdown.Item>
-							<Dropdown.Item value="Pará-PA" onClick={handleChange}>
+							<Dropdown.Item value="Pará-PA" onClick={handleSelect}>
 								Pará-PA
 							</Dropdown.Item>
-							<Dropdown.Item value="Paraíba-PB" onClick={handleChange}>
+							<Dropdown.Item value="Paraíba-PB" onClick={handleSelect}>
 								Paraíba-PB
 							</Dropdown.Item>
-							<Dropdown.Item value="Paraná-PR" onClick={handleChange}>
+							<Dropdown.Item value="Paraná-PR" onClick={handleSelect}>
 								Paraná-PR
 							</Dropdown.Item>
-							<Dropdown.Item value="Pernambuco-PE" onClick={handleChange}>
+							<Dropdown.Item value="Pernambuco-PE" onClick={handleSelect}>
 								Pernambuco-PE
 							</Dropdown.Item>
-							<Dropdown.Item value="Piauí-PI" onClick={handleChange}>
+							<Dropdown.Item value="Piauí-PI" onClick={handleSelect}>
 								Piauí-PI
 							</Dropdown.Item>
-							<Dropdown.Item value="Rio de Janeiro-RJ" onClick={handleChange}>
+							<Dropdown.Item value="Rio de Janeiro-RJ" onClick={handleSelect}>
 								Rio de Janeiro-RJ
 							</Dropdown.Item>
 							<Dropdown.Item
-								value="Rio Grande do Norte-R"
-								onClick={handleChange}
+								value="Rio Grande do Norte-RN"
+								onClick={handleSelect}
 							>
-								Rio Grande do Norte-R
+								Rio Grande do Norte-RM
 							</Dropdown.Item>
 							<Dropdown.Item
 								value="Rio Grande do Sul-RS"
-								onClick={handleChange}
+								onClick={handleSelect}
 							>
 								Rio Grande do Sul-RS
 							</Dropdown.Item>
-							<Dropdown.Item value="Rondônia-RO" onClick={handleChange}>
+							<Dropdown.Item value="Rondônia-RO" onClick={handleSelect}>
 								Rondônia-RO
 							</Dropdown.Item>
-							<Dropdown.Item value="Roraima-RR" onClick={handleChange}>
+							<Dropdown.Item value="Roraima-RR" onClick={handleSelect}>
 								Roraima-RR
 							</Dropdown.Item>
-							<Dropdown.Item value="Santa Catarina-SC" onClick={handleChange}>
+							<Dropdown.Item value="Santa Catarina-SC" onClick={handleSelect}>
 								Santa Catarina-SC
 							</Dropdown.Item>
-							<Dropdown.Item value="São Paulo-SP" onClick={handleChange}>
+							<Dropdown.Item value="São Paulo-SP" onClick={handleSelect}>
 								São Paulo-SP
 							</Dropdown.Item>
-							<Dropdown.Item value="Sergipe-SE" onClick={handleChange}>
+							<Dropdown.Item value="Sergipe-SE" onClick={handleSelect}>
 								Sergipe-SE
 							</Dropdown.Item>
-							<Dropdown.Item value="Tocantins-TO" onClick={handleChange}>
+							<Dropdown.Item value="Tocantins-TO" onClick={handleSelect}>
 								Tocantins-TO
 							</Dropdown.Item>
 						</DropdownButton>
@@ -161,7 +165,7 @@ function EditUser({ form, setForm, reload, setReload }) {
 							type="text"
 							name="cidade"
 							value={form.cidade}
-							onChange={handleChange}
+							onChange={handleSelect}
 						/>
 					</Form.Group>
 				</Modal.Body>
