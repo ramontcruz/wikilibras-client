@@ -71,6 +71,7 @@ return (
 					<input
 						type="file"
 						id="formImg"
+						name="profilepic"
 						onChange={handleImage}
 						className="form-control"
 					/>
