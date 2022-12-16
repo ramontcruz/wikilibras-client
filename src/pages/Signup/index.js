@@ -51,66 +51,66 @@ export function Signup() {
       console.log(error);
     }
   }
-
-  return (
-    <form onSubmit={handleSubmit} class="d-flex justify-content-center">
-      <div class="form-group">
-        <div class="col my-1">
-          <label htmlFor="formName">Nome:</label>
-          <input
-            id="formName"
-            name="name"
-            type="text"
-            value={form.name}
-            onChange={handleChange}
-            class="form-control"
-          />
-        </div>
-        <div class="form-control-file my-1">
-          <label htmlFor="formImg">Sua foto de perfil:</label>
-          <input
-            type="file"
-            id="formImg"
-            onChange={handleImage}
-            class="form-control"
-          />
-        </div>
-        <div class="my-1">
-          <label htmlFor="formEmail">E-mail:</label>
-          <input
-            id="formEmail"
-            name="email"
-            type="email"
-            value={form.email}
-            onChange={handleChange}
-            class="form-control"
-          />
-        </div>
-        <div class=" my-1">
-          <label htmlFor="formPassword">Senha:</label>
-          <input
-            id="formPassword"
-            name="password"
-            type="password"
-            value={form.password}
-            onChange={handleChange}
-            class="form-control"
-          />
-        </div>
-        <div class="my-1">
-          <label htmlFor="formConfirmPassword">Confirmação de senha</label>
-          <input
-            id="formConfirmPassword"
-            type="password"
-            name="confirmPassword"
-            value={form.confirmPassword}
-            onChange={handleChange}
-            class="form-control"
-          />
-        </div>
-        <button type="submit" class="btn btn-outline-primary my-1">
-          Cadastrar
-        </button>
+return (
+		
+			<form className="d-flex justify-content-center" onSubmit={handleSubmit}>
+				<div className="form-group">
+        <div className="col my-1">
+					<label htmlFor="formName">Nome:</label>
+					<input
+						id="formName"
+						name="name"
+						type="text"
+						value={form.name}
+						onChange={handleChange}
+						className="form-control"
+					/>
+				</div>
+				<div className="form-control-file my-1">
+					<label htmlFor="formImg">Sua foto de perfil:</label>
+					<input
+						type="file"
+						id="formImg"
+						onChange={handleImage}
+						className="form-control"
+					/>
+				</div>
+				<div className="my-1">
+					<label htmlFor="formEmail">E-mail:</label>
+					<input
+						id="formEmail"
+						name="email"
+						type="email"
+						value={form.email}
+						onChange={handleChange}
+						className="form-control"
+					/>
+				</div>
+				<div className="my-1">
+					<label htmlFor="formPassword">Senha:</label>
+					<input
+						id="formPassword"
+						name="password"
+						type="password"
+						value={form.password}
+						onChange={handleChange}
+						className="form-control"
+					/>
+				</div>
+				<div className="my-1">
+					<label htmlFor="formConfirmPassword">Confirmação de senha</label>
+					<input
+						id="formConfirmPassword"
+						type="password"
+						name="confirmPassword"
+						value={form.confirmPassword}
+						onChange={handleChange}
+						className="form-control"
+					/>
+				</div>
+				<button type="submit" className="btn btn-outline-primary my-1">
+					Cadastrar
+				</button>
       </div>
     </form>
   );
