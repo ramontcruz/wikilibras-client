@@ -2,6 +2,7 @@ import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 import { Container, Button, Card, Row, Col } from "react-bootstrap";
+import {toast} from "react-hot-toast";
 
 export function Signup() {
   const navigate = useNavigate();
